@@ -11,11 +11,11 @@ const images = [
   export function Slider() {
     const [currentIndex, setCurrentIndex] = useState(0);
   
-    const nextSlide = () => {
+    const  prevSlide = () => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     };
   
-    const prevSlide = () => {
+    const nextSlide  = () => {
       setCurrentIndex((prevIndex) =>
         prevIndex === 0 ? images.length - 1 : prevIndex - 1
       );
@@ -29,9 +29,8 @@ const images = [
     return (
       <div className="slider">
         <img src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} className="slide" />
-        <button className="slider__button prev" onClick={prevSlide}>❮</button>
-        
-        <button className="slider__button next" onClick={nextSlide}>❯</button>
+        <button className="slider__button next" onClick={nextSlide}>❮</button>
+        <button className="slider__button prev" onClick={prevSlide}>❯</button>
       </div>
     );
   }

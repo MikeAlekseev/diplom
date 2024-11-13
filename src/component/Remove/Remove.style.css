@@ -1,0 +1,6 @@
+.button__remove{
+    max-width: 100px;
+    padding: 5px;
+    background-color: red;
+    color: white;
+}
