@@ -15,7 +15,7 @@ export function Card({ text, imageSrc, id, showRemoveButton }) {
     <div className="card">
       <Link to={"/product/" + id}>
         {imageSrc && <img src={imageSrc} alt={text} />}
-        <p>{text}</p>
+        <h2>{text}</h2>
       </Link>
 
       {/* Если продукт есть в корзине, показываем кнопку Remove, иначе Add */}

@@ -2,7 +2,7 @@ export const products = [
     {
         id:"1",
         text:"Ноутбуки", 
-        imageSrc: "/img/notebook.png",
+        imageSrc: "/img/notebook.jpg",
     },
     {
         id:"2",
@@ -17,7 +17,7 @@ export const products = [
     {
         id:"4",
         text:"Смартфоны",
-        imageSrc: "/img/smart.png",
+        imageSrc: "/img/smart.jpg",
     },
     {
         id:"5",

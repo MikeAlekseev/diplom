@@ -15,6 +15,7 @@ import { getFromBasket } from "../../component/util/basketLocalStorage";
 import { Search } from "../../component/Search";
 import { UserAuth } from "../../component/UserAuth";
 import { getUser } from "../../component/util/userLocalStorage";
+import { CatalogButton } from "../../component/CatalogButton/CatalogButton";
 
 export const Layout = ({ children }) => {
   const [basketState, setBasketState] = useState(getFromBasket());
@@ -37,10 +38,11 @@ export const Layout = ({ children }) => {
                     <img src={logo} alt="logo" />
                   </div>
                   <div className="header__block1">
-                    <button className="header__button__catalog">
+                    {/* <button className="header__button__catalog">
                       <FontAwesomeIcon icon={faList} />
                       Catalog
-                    </button>
+                    </button> */}
+                    <CatalogButton />
                     <Search />
                   </div>
                   <div className="header__block2">
@@ -50,10 +52,9 @@ export const Layout = ({ children }) => {
                           {basketState.length}
                         </span>
                       )}
-                      <FontAwesomeIcon icon={faBasketShopping} />
+                      <FontAwesomeIcon className="svg__basket" icon={faBasketShopping} />
                     </Link>
                     <div className="header__login">
-                      
                       <UserAuth />
                     </div>
                   </div>
@@ -61,21 +62,32 @@ export const Layout = ({ children }) => {
               </div>
               <div className="header__down">
                 <ul className="header__down__list">
-                  <li>
+                  <li className="item__list">
                     <Link to="#">Ноутбуки</Link>
                   </li>
-                  <li>
-                    <Link to="#">телефоны</Link>
+                  <li className="item__list">
+                    <Link to="#">Роутеры</Link>
                   </li>
-                  <li>
-                    <Link to="#">модемы</Link>
+                  <li className="item__list">
+                    <Link to="#">Модемы</Link>
                   </li>
-                  <li>
-                    <Link to="#">USB/SSD</Link>
+                  <li className="item__list">
+                    <Link to="#">Смартфоны</Link>
+                  </li>
+                  <li className="item__list">
+                    <Link to="#">Планшеты</Link>
+                  </li>
+                  <li className="item__list">
+                    <Link to="#">SSD</Link>
+                  </li>
+                  <li className="item__list">
+                    <Link to="#">USB</Link>
                   </li>
                 </ul>
                 <button className="header__down__link">
-                  <Link to="#">ссылка для связи</Link>
+                  <Link to="#">
+                    <p className="header__button__text">ссылка для связи</p>
+                  </Link>
                 </button>
               </div>
               {/* <ul>
@@ -89,7 +101,6 @@ export const Layout = ({ children }) => {
             </header>
 
             <main className="main center">
-              {/* <Slider /> */}
               {children}
             </main>
 
@@ -97,29 +108,36 @@ export const Layout = ({ children }) => {
               <div className="footer__up">
                 <div className="footer__up__catalog">
                   <ul>
-                    <li>
+                    <li className="item__list">
                       <Link to="#">Ноутбуки</Link>
                     </li>
-                    <li>
-                      <Link to="#">телефоны</Link>
+                    <li className="item__list">
+                      <Link to="#">Роутеры</Link>
                     </li>
-                    <li>
-                      <Link to="#">модемы</Link>
+                    <li className="item__list">
+                      <Link to="#">Модемы</Link>
                     </li>
-                    <li>
-                      <Link to="#">USB/SSD</Link>
+                    <li className="item__list">
+                      <Link to="#">Смартфоны</Link>
+                    </li>
+                    <li className="item__list">
+                      <Link to="#">Планшеты</Link>
+                    </li>
+                    <li className="item__list">
+                      <Link to="#">SSD</Link>
+                    </li>
+                    <li className="item__list">
+                      <Link to="#">USB</Link>
                     </li>
                   </ul>
                 </div>
                 <div className="footer__up__rules">
-                  Правила: Lorem ipsum dolor sit amet consectetur adipisicing
-                  elit. Fugit laudantium eum itaque facere. Nobis, possimus est?
-                  Dignissimos labore vel a, ratione repudiandae nulla quod natus
-                  voluptas vero culpa facere debitis!
+                  Тут будет валютный конвертер
                 </div>
                 <form className="footer__up__contact">
                   <div className="footer__up__contact__text">Написать нам</div>
                   <input
+                    className="footer__input"
                     type="text"
                     id="myInput"
                     name="myInput"

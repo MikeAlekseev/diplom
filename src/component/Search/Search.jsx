@@ -11,7 +11,7 @@ export function Search({}) {
         type="text"
         id="myInput"
         name="myInput"
-        placeholder="Search"
+        placeholder="Поиск..."
         onChange={(e)=>{
             search.onChange(e.target.value)
         }}  

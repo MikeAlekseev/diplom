@@ -13,11 +13,11 @@ export function UserAuth() {
 
   if (userContext.user) {
     return (
-        <button
+      <button
         className="action__btn"
         onClick={() => {
-            userContext.setUser(null);
-            setUser(null);
+          userContext.setUser(null);
+          setUser(null);
         }}
       >
         {userContext.user}
@@ -36,43 +36,56 @@ export function UserAuth() {
       </button>
       {isModelShow && (
         <div className="login">
-        <div className="login__input">
-          <p>Введите Логин</p>
-          <div className="input__folder">
-            <input
-              className="input__place"
-              type="text"
-              placeholder="логин"
-              ref={loginRef}
-            ></input>
-            <FontAwesomeIcon icon={faXmark} />
-          </div>
-          <p>Введите Пароль</p>
-          <div className="input__folder">
-            <input
-              className="input__place"
-              type="text"
-              placeholder="пароль"
-              ref={passRef}
-            ></input>
-            <FontAwesomeIcon icon={faXmark} onClick={()=>{
-                setIsModelShow(false)
-            }} />
-          </div>
+          <div className="login__input">
+            <p>Введите Логин</p>
+            <div className="input__folder">
+              <input
+                className="input__place"
+                type="text"
+                placeholder="Логин..."
+                ref={loginRef}
+              ></input>
+              {/* <FontAwesomeIcon icon={faXmark} /> */}
+            </div>
+            <p>Введите Пароль</p>
+            <div className="input__folder">
+              <input
+                className="input__place"
+                type="text"
+                placeholder="Пароль..."
+                ref={passRef}
+              ></input>
+              {/* <FontAwesomeIcon
+                icon={faXmark}
+                onClick={() => {
+                  setIsModelShow(false);
+                }}
+              /> */}
+            </div>
 
-          <div className="button__input">
-            <button className="button__login" onClick={() => {
-                const login = loginRef.current.value
-                // const pass = passRef.current.value
-                userContext.setUser(login)
-                setUser(login)
-            }}>Войти</button>
-            <button className="button__cancel" onClick={()=>{
-                setIsModelShow(false)
-            }}>Отмена</button>
+            <div className="button__input">
+              <button
+                className="button__login"
+                onClick={() => {
+                  const login = loginRef.current.value;
+                  // const pass = passRef.current.value
+                  userContext.setUser(login);
+                  setUser(login);
+                }}
+              >
+                Войти
+              </button>
+              <button
+                className="button__cancel"
+                onClick={() => {
+                  setIsModelShow(false);
+                }}
+              >
+                Отмена
+              </button>
+            </div>
           </div>
         </div>
-      </div>
       )}
     </div>
   );
