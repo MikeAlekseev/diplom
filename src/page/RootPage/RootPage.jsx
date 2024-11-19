@@ -31,6 +31,8 @@ export function RootPage() {
               id={product.id}
               text={product.text}
               imageSrc={product.imageSrc}
+              isGroup={true}
+              url={"/product/" + product.id}
             />
           );
         })}

@@ -211,7 +211,7 @@ ul {
   padding-bottom: 8px;
   max-width: 50px;
   border: 1px solid;
-  :hover{
+  &:hover{
     background-color: #0056b3;
   }
 }

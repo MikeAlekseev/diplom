@@ -6,6 +6,7 @@ import { RootPage } from './page/RootPage'
 import { UserPage } from './page/UserPage'
 import { ProductPage } from './page/ProductPage'
 import { Basket } from './page/Basket/basket'
+import { ItemPage } from './page/ItemPage'
 
 export function App() {
     return (
@@ -16,6 +17,7 @@ export function App() {
                     <Route path="product/:productId" element={<ProductPage/>} />
                     <Route path="basket" element={<Basket/>} />
                     <Route path="/user" element={<UserPage/>} />
+                    <Route path="item/:itemId" element={<ItemPage/>} />
                     <Route path="*" element={<h2>404</h2>} />
                     
                 </Routes>

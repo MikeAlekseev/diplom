@@ -63,9 +63,9 @@
   }
   
   /* Анимация появления модального окна */
-  .modal-content {
-    /* animation: fadeIn 0.3s ease-in-out; */
-  }
+  /* .modal-content {
+    animation: fadeIn 0.3s ease-in-out;
+  } */
   
   @keyframes fadeIn {
     from {

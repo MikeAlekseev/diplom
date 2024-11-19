@@ -3,6 +3,20 @@ export const products = [
         id:"1",
         text:"Ноутбуки", 
         imageSrc: "/img/notebook.jpg",
+        items:[{
+            id: "1",
+            imageSrc: "/img/notebook.jpg",
+            text: "Lenova",
+            price: 55000,
+            description: "блаблабла",
+        },
+        {
+            id: "2",
+            imageSrc: "/img/notebook.jpg",
+            text: "HP",
+            price: 35000,
+            
+        }],
     },
     {
         id:"2",
@@ -36,3 +50,11 @@ export const products = [
     },
 ]
 
+export const items = {}
+products.forEach(product => {
+    if(product.items){
+        product.items.forEach(item => {
+            items[item.id] = item;
+        });
+    }
+})

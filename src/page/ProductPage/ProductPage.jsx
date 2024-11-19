@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { products } from "../../data";
+import { Card } from "../../component";
 
 
 export function ProductPage() {
@@ -10,10 +11,13 @@ export function ProductPage() {
   });
   return (
     <div className="похрен">
-      Product page
-      
-      {productId}
+  
       {product ? product.text : "Не найдено"}
+      <div>
+        {product.items.map(item => {
+          return <Card key = {item.id} text={item.text} imageSrc = {item.imageSrc} id = {item.id} showRemoveButton = {false} price = {item.price} url = {"/item/" + item.id} /> 
+        })}
+      </div>
     </div>
   );
 }

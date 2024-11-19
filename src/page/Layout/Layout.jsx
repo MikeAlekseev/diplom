@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import logo from "../img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faList } from "@fortawesome/free-solid-svg-icons";
-import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
+// import { faList } from "@fortawesome/free-solid-svg-icons";
+// import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
+// import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 // import { faTelegram } from "@fortawesome/free-solid-svg-icons";
@@ -16,6 +16,7 @@ import { Search } from "../../component/Search";
 import { UserAuth } from "../../component/UserAuth";
 import { getUser } from "../../component/util/userLocalStorage";
 import { CatalogButton } from "../../component/CatalogButton/CatalogButton";
+import { products } from "../../data";
 
 export const Layout = ({ children }) => {
   const [basketState, setBasketState] = useState(getFromBasket());
@@ -108,27 +109,11 @@ export const Layout = ({ children }) => {
               <div className="footer__up">
                 <div className="footer__up__catalog">
                   <ul>
-                    <li className="item__list">
-                      <Link to="#">Ноутбуки</Link>
+                    {products.map((product)=>(
+                      <li key={product.id} className="item__list">
+                      <Link to={"/product/" + product.id}>{product.text}</Link>
                     </li>
-                    <li className="item__list">
-                      <Link to="#">Роутеры</Link>
-                    </li>
-                    <li className="item__list">
-                      <Link to="#">Модемы</Link>
-                    </li>
-                    <li className="item__list">
-                      <Link to="#">Смартфоны</Link>
-                    </li>
-                    <li className="item__list">
-                      <Link to="#">Планшеты</Link>
-                    </li>
-                    <li className="item__list">
-                      <Link to="#">SSD</Link>
-                    </li>
-                    <li className="item__list">
-                      <Link to="#">USB</Link>
-                    </li>
+                    ))}
                   </ul>
                 </div>
                 <div className="footer__up__rules">
