@@ -22,7 +22,7 @@ export function Add({ id }) {
         type="button"
         onClick={handleAddClick}
       >
-        Add
+        Добавить
       </button>
     )
   );

@@ -1,13 +1,9 @@
 import { Link } from "react-router-dom";
 import logo from "../img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faList } from "@fortawesome/free-solid-svg-icons";
-// import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
-// import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-// import { faTelegram } from "@fortawesome/free-solid-svg-icons";
 import "./Layout.style.css";
 import { useState } from "react";
 import { BasketContext, SearchContext, UserContext } from "../../context";
@@ -17,6 +13,7 @@ import { UserAuth } from "../../component/UserAuth";
 import { getUser } from "../../component/util/userLocalStorage";
 import { CatalogButton } from "../../component/CatalogButton/CatalogButton";
 import { products } from "../../data";
+import { Exchange } from "../../component/Exchange";
 
 export const Layout = ({ children }) => {
   const [basketState, setBasketState] = useState(getFromBasket());
@@ -39,10 +36,6 @@ export const Layout = ({ children }) => {
                     <img src={logo} alt="logo" />
                   </div>
                   <div className="header__block1">
-                    {/* <button className="header__button__catalog">
-                      <FontAwesomeIcon icon={faList} />
-                      Catalog
-                    </button> */}
                     <CatalogButton />
                     <Search />
                   </div>
@@ -53,7 +46,10 @@ export const Layout = ({ children }) => {
                           {basketState.length}
                         </span>
                       )}
-                      <FontAwesomeIcon className="svg__basket" icon={faBasketShopping} />
+                      <FontAwesomeIcon
+                        className="svg__basket"
+                        icon={faBasketShopping}
+                      />
                     </Link>
                     <div className="header__login">
                       <UserAuth />
@@ -63,27 +59,13 @@ export const Layout = ({ children }) => {
               </div>
               <div className="header__down">
                 <ul className="header__down__list">
-                  <li className="item__list">
-                    <Link to="#">Ноутбуки</Link>
-                  </li>
-                  <li className="item__list">
-                    <Link to="#">Роутеры</Link>
-                  </li>
-                  <li className="item__list">
-                    <Link to="#">Модемы</Link>
-                  </li>
-                  <li className="item__list">
-                    <Link to="#">Смартфоны</Link>
-                  </li>
-                  <li className="item__list">
-                    <Link to="#">Планшеты</Link>
-                  </li>
-                  <li className="item__list">
-                    <Link to="#">SSD</Link>
-                  </li>
-                  <li className="item__list">
-                    <Link to="#">USB</Link>
-                  </li>
+                  {products.map((product) => (
+                      <li key={product.id} className="item__list">
+                        <Link to={"/product/" + product.id}>
+                          {product.text}
+                        </Link>
+                      </li>
+                    ))}
                 </ul>
                 <button className="header__down__link">
                   <Link to="#">
@@ -91,34 +73,24 @@ export const Layout = ({ children }) => {
                   </Link>
                 </button>
               </div>
-              {/* <ul>
-                    <li>
-                        <Link to="/">Index</Link>
-                    </li>
-                    <li>
-                        <Link to="/user">User</Link>
-                    </li>
-                </ul> */}
             </header>
 
-            <main className="main center">
-              {children}
-            </main>
+            <main className="main center">{children}</main>
 
             <footer className="footer center">
               <div className="footer__up">
                 <div className="footer__up__catalog">
                   <ul>
-                    {products.map((product)=>(
+                    {products.map((product) => (
                       <li key={product.id} className="item__list">
-                      <Link to={"/product/" + product.id}>{product.text}</Link>
-                    </li>
+                        <Link to={"/product/" + product.id}>
+                          {product.text}
+                        </Link>
+                      </li>
                     ))}
                   </ul>
                 </div>
-                <div className="footer__up__rules">
-                  Тут будет валютный конвертер
-                </div>
+                <Exchange />
                 <form className="footer__up__contact">
                   <div className="footer__up__contact__text">Написать нам</div>
                   <input

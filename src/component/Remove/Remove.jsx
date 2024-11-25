@@ -25,7 +25,7 @@ export function Remove({ id }) {
         type="button"
         onClick={handleRemoveClick}
       >
-        Remove
+        Отменить
       </button>
     )
   );

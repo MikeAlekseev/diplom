@@ -1,6 +1,4 @@
-// import { useParams } from "react-router-dom"
 import { items } from "../../data";
-// import { Add } from "../../component/Add/Add.jsx";
 import { BasketContext } from "../../context.js";
 import { useContext } from "react";
 import { Card } from "../../component/index.js";
@@ -9,9 +7,9 @@ export function Basket() {
   const basket = useContext(BasketContext);
 
   return (
-    <div>
+    <div className="basket__flex">
       <h2>Корзина</h2>
-      <div>
+      <div className="basket__card">
         {basket.products.map((id) => {
           return (
             <Card

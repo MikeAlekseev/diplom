@@ -10,7 +10,7 @@ export function ProductPage() {
     return product.id === productId;
   });
   return (
-    <div className="похрен">
+    <div className="product__items">
   
       {product ? product.text : "Не найдено"}
       <div>

@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./CatalogButton.style.css"; // Подключаем стили
 import { Link } from "react-router-dom";
+import { products } from "../../data";
 
 export const CatalogButton = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  useEffect(()=>{
+    window.document.addEventListener('click', () => {
+      setIsModalOpen(false);
+  })
+  }, [])
 
-  const toggleModal = () => {
+  const toggleModal = (e) => {
+    e.stopPropagation();
     setIsModalOpen((prev) => !prev);
   };
 
@@ -24,31 +31,15 @@ export const CatalogButton = () => {
         <div className="modal" onClick={toggleModal}>
           <div
             className="modal-content"
-            onClick={(e) => e.stopPropagation()} // Предотвращаем закрытие окна при клике на содержимое
+            // onClick={(e) => e.stopPropagation()} // Предотвращаем закрытие окна при клике на содержимое
           >
             <h3>Список:</h3>
             <ul>
-            <li className="item__list">
-                    <Link to="#">Ноутбуки</Link>
-                  </li>
-                  <li className="item__list">
-                    <Link to="#">Роутеры</Link>
-                  </li>
-                  <li className="item__list">
-                    <Link to="#">Модемы</Link>
-                  </li>
-                  <li className="item__list">
-                    <Link to="#">Смартфоны</Link>
-                  </li>
-                  <li className="item__list">
-                    <Link to="#">Планшеты</Link>
-                  </li>
-                  <li className="item__list">
-                    <Link to="#">SSD</Link>
-                  </li>
-                  <li className="item__list">
-                    <Link to="#">USB</Link>
-                  </li>
+              {products.map((product) => (
+                <li key={product.id} className="item__list">
+                  <Link to={"/product/" + product.id}>{product.text}</Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

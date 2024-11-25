@@ -7,11 +7,11 @@
 
 :root {
   --background-color: #121212; /* Основной фон */
-  --text-color: #E0E0E0; /* Цвет текста */
-  --accent-color: #3A82F7; /* Основной акцент */
-  --accent-hover: #4C91F7; /* При наведении */
+  --text-color: #e0e0e0; /* Цвет текста */
+  --accent-color: #3a82f7; /* Основной акцент */
+  --accent-hover: #4c91f7; /* При наведении */
   --secondary-color: #555555; /* Границы и второстепенные элементы */
-  --highlight-color: #00FF7F; /* Яркие выделения */
+  --highlight-color: #00ff7f; /* Яркие выделения */
 }
 
 header {
@@ -27,7 +27,7 @@ footer {
 }
 
 .card {
-  background-color: #1E1E2E; /* Графитовый цвет */
+  background-color: #1e1e2e; /* Графитовый цвет */
   color: var(--text-color);
   border: 1px solid var(--text-color);
   border-radius: 8px;
@@ -53,7 +53,6 @@ button {
   cursor: pointer;
   font-size: 16px;
   border: 1px solid white;
-  
 }
 
 a {
@@ -68,7 +67,7 @@ body {
   /* font-family: Arial, sans-serif; */
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .center {
@@ -102,7 +101,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  max-width: 500px;
 }
 .header__block2 {
   display: flex;
@@ -114,19 +113,21 @@ body {
 .header__up__list {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.catalog__list{
+.catalog__list {
   max-width: 300px;
 }
 
 .header__down {
   display: flex;
-  /* border: 1px solid; */
-  /* height: 50px; */
   align-items: center;
   padding: 10px;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 .header__down__list {
   display: flex;
@@ -136,7 +137,7 @@ body {
 .header__down__link {
   max-width: 200px;
   color: white;
-  :hover{
+  &:hover {
     background-color: #0056b3;
   }
 }
@@ -151,7 +152,6 @@ ul {
   list-style: none;
 }
 
-
 .loop {
   padding-top: 8px;
   padding-bottom: 8px;
@@ -161,49 +161,55 @@ ul {
 
 .basket {
   padding-top: 5px;
-    padding-bottom: 5px;
-    max-width: 50px;
-    border: 1px solid #E0E0E0;
-    position: relative;
-    background-color: #3A82F7;
-    color: #E0E0E0;
-    border-radius: 5px;
+  padding-bottom: 5px;
+  max-width: 50px;
+  border: 1px solid #e0e0e0;
+  position: relative;
+  background-color: #3a82f7;
+  color: #e0e0e0;
+  border-radius: 5px;
+  &:hover {
+    background-color: #0056b3;
+  }
 }
-.svg__basket:hover{
-  background-color: #0056b3;
+.basket__flex {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
 }
-
+/* .basket__card{
+  display: flex;
+  max-width: 1000px;
+} */
 
 .basket__number {
   display: flex;
   justify-content: space-evenly;
-  color: white;
+  color: rgb(175, 13, 13);
   position: absolute;
   padding-left: 25px;
 }
 .header__login {
-    max-width: 50px;
-    position: relative;
-    
-  }
+  max-width: 50px;
+  position: relative;
+}
 
 .login {
-    display: block;
-    position: absolute;
-    top: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    /* color: white; */
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 300px;
-    /* text-align: center; */
-    /* opacity: 0; */
-    transition: opacity 0.3s ease-in-out;
-    z-index: 1;
-    
+  display: block;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  /* color: white; */
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  /* text-align: center; */
+  /* opacity: 0; */
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1;
 }
 
 .action__btn {
@@ -211,14 +217,16 @@ ul {
   padding-bottom: 8px;
   max-width: 50px;
   border: 1px solid;
-  &:hover{
+  &:hover {
     background-color: #0056b3;
   }
 }
-/* .action__btn:hover + .login{
-    display: block;
-    opacity: 1;
-} */
+.product__items {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
 
 .input__place {
   max-width: 190px;
@@ -227,9 +235,9 @@ ul {
   margin-top: 5px;
 }
 
-.input__folder{
-    display: flex;
-    align-items: baseline;
+.input__folder {
+  display: flex;
+  align-items: baseline;
 }
 
 .button__input {
@@ -251,7 +259,7 @@ ul {
 }
 
 .logo {
-  width: 160px;
+  max-width: 130px;
 }
 
 .header__button__catalog {
@@ -261,17 +269,16 @@ ul {
   align-items: center;
   padding: 10px;
 }
-.header__button__text{
-  color: #E0E0E0;
+.header__button__text {
+  color: #e0e0e0;
 }
 
-.item__list{
+.item__list {
   transition: transform 0.3s ease; /* Плавный переход */
 }
-.item__list:hover{
+.item__list:hover {
   transform: scale(1.1);
 }
-
 
 .footer {
   /* max-width: 1140px; */
@@ -288,13 +295,15 @@ ul {
   display: flex;
   border-bottom: 1px solid;
   padding: 10px;
-  justify-content: space-between;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
 }
-.footer__up__button{
+.footer__up__button {
   transition: background-color 0.3s ease;
 }
 
-.footer__up__button:hover{
+.footer__up__button:hover {
   background-color: #0056b3;
   /* transform: scale(1.1); */
 }
@@ -324,7 +333,7 @@ ul {
   justify-content: center;
   gap: 10px;
 }
-.footer__input{
+.footer__input {
   height: 30px;
 }
 
