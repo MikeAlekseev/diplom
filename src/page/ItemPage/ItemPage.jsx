@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { items } from "../../data";
-import { Card } from "../../component";
+
 
 export function ItemPage() {
   const { itemId } = useParams();

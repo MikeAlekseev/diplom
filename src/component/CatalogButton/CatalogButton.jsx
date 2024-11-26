@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./CatalogButton.style.css"; // Подключаем стили
+import "./CatalogButton.style.css";
 import { Link } from "react-router-dom";
 import { products } from "../../data";
 
@@ -20,18 +20,17 @@ export const CatalogButton = () => {
 
   return (
     <div className="header__button__catalog">
-      {/* Кнопка для открытия/закрытия окна */}
+      
       <button className="catalog-button" onClick={toggleModal}>
         <FontAwesomeIcon icon={faList} />
         Catalog
       </button>
 
-      {/* Модальное окно */}
+      
       {isModalOpen && (
         <div className="modal" onClick={toggleModal}>
           <div
             className="modal-content"
-            // onClick={(e) => e.stopPropagation()} // Предотвращаем закрытие окна при клике на содержимое
           >
             <h3>Список:</h3>
             <ul>

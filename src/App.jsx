@@ -1,27 +1,25 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Layout } from "./page/Layout";
+import { RootPage } from "./page/RootPage";
+import { ProductPage } from "./page/ProductPage";
+import { Basket } from "./page/Basket/Basket";
+import { ItemPage } from "./page/ItemPage";
+import { CurrencyContext } from "./context";
 
-
-import { Layout } from './page/Layout'
-import { RootPage } from './page/RootPage'
-// import { UserPage } from './page/UserPage'
-import { ProductPage } from './page/ProductPage'
-import { Basket } from './page/Basket/basket'
-import { ItemPage } from './page/ItemPage'
-
-export function App() {
-    return (
-        <BrowserRouter>
-            <Layout>
-                <Routes>
-                    <Route path="/" element={<RootPage/>} />
-                    <Route path="product/:productId" element={<ProductPage/>} />
-                    <Route path="basket" element={<Basket/>} />
-                    {/* <Route path="/user" element={<UserPage/>} /> */}
-                    <Route path="item/:itemId" element={<ItemPage/>} />
-                    <Route path="*" element={<h2>404</h2>} />
-                    
-                </Routes>
-            </Layout>
-        </BrowserRouter >
-    )
+export function App({ currency }) {
+  return (
+    <CurrencyContext.Provider value={currency}>
+      <BrowserRouter>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<RootPage />} />
+            <Route path="product/:productId" element={<ProductPage />} />
+            <Route path="basket" element={<Basket />} />
+            <Route path="item/:itemId" element={<ItemPage />} />
+            <Route path="*" element={<h2>404</h2>} />
+          </Routes>
+        </Layout>
+      </BrowserRouter>
+    </CurrencyContext.Provider>
+  );
 }

@@ -1,9 +1,9 @@
 import { Card } from "../../component";
 import { products } from "../../data";
-import "../RootPage/RootPage.style.css";
 import { Slider } from "../../component/Slider/Slider";
 import { useContext } from "react";
 import { SearchContext } from "../../context";
+import "../RootPage/RootPage.style.css";
 
 
 export function RootPage() {

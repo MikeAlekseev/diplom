@@ -1,7 +1,4 @@
 .card {
-    /* margin: 4px;
-    padding: 4px;
-    border: 1px solid #808080; */
     max-width: 300px;
     display: inline-block;
     transition: transform 0.3s ease;

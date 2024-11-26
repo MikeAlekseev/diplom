@@ -1,10 +1,8 @@
 
-
 export async function getCurrency(){
     const responce = await fetch("https://api.coingecko.com/api/v3/exchange_rates")
     const body = await responce.json()
     const {rub, usd, btc} = body.rates;
-    console.log(rub, usd, btc);
     return {
         btc:{
             rub:rub.value,

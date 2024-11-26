@@ -2,7 +2,6 @@ import { UserContext } from "../../context";
 import { useContext, useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { setUser } from "../util/userLocalStorage";
 
 export function UserAuth() {
@@ -45,7 +44,6 @@ export function UserAuth() {
                 placeholder="Логин..."
                 ref={loginRef}
               ></input>
-              {/* <FontAwesomeIcon icon={faXmark} /> */}
             </div>
             <p>Введите Пароль</p>
             <div className="input__folder">
@@ -55,12 +53,6 @@ export function UserAuth() {
                 placeholder="Пароль..."
                 ref={passRef}
               ></input>
-              {/* <FontAwesomeIcon
-                icon={faXmark}
-                onClick={() => {
-                  setIsModelShow(false);
-                }}
-              /> */}
             </div>
 
             <div className="button__input">

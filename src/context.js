@@ -9,3 +9,5 @@ export const SearchContext = createContext({
 export const UserContext = createContext({
     user:null,
 })
+
+export const CurrencyContext = createContext(null);

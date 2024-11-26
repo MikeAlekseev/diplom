@@ -1,5 +1,5 @@
 import './Remove.style.css'
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { BasketContext } from "../../context";  // Импортируем контекст корзины
 import { removeFromBasket } from "../util/basketLocalStorage";  // Функция для удаления из локального хранилища
 

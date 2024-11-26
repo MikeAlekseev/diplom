@@ -1,11 +1,7 @@
-import { useState, useRef, useEffect } from "react";
-import { getCurrency } from "./GetCurrency";
+import { useState, useRef, useEffect, useContext } from "react";
+import { CurrencyContext } from "../../context";
 import "../../page/Layout/Layout.style.css";
 
-let currency = null;
-getCurrency().then((data) => {
-  currency = data;
-});
 
 export function Exchange() {
   const rubRef = useRef(null);
@@ -14,6 +10,7 @@ export function Exchange() {
   const [rub, setRub] = useState(0);
   const [btc, setBtc] = useState(0);
   const [usd, setUsd] = useState(0);
+  const currency = useContext(CurrencyContext);
   useEffect(() => {
     rubRef.current.value = rub.toString();
   }, [rub]);
