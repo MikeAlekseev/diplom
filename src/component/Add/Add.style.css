@@ -1,9 +1,9 @@
-.button__add{
-    max-width: 100px;
-    padding: 5px;
-    background-color: blueviolet;
-    color: #E0E0E0;
+.button__add {
+  max-width: 100px;
+  padding: 5px;
+  background-color: blueviolet;
+  color: #e0e0e0;
 }
-.button__add:hover{
-    background-color: #0056b3;
-  }
+.button__add:hover {
+  background-color: #0056b3;
+}
