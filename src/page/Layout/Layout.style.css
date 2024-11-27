@@ -354,10 +354,14 @@ ul {
 
 .footer__down {
   display: flex;
-  padding: 10px;
+  align-items: center;
   justify-content: space-between;
-  flex-wrap: nowrap;
-  /* max-width: 250px; */
+  margin-top: 10px;
+}
+.footer__down__left {
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
 }
 .footer__down__rule {
   width: 214px;
@@ -406,10 +410,10 @@ ul {
     padding-left: 8px;
     padding-right: 8px;
   }
-.header__down{
-  display: flex;
-  justify-content: center;
-}
+  .header__down {
+    display: flex;
+    justify-content: center;
+  }
 
   .header__down__list {
     display: flex;
@@ -418,6 +422,12 @@ ul {
   .footer__down {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer__down__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .logo {
     flex: 1 1 calc(50% - 10px);

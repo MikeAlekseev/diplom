@@ -1,22 +1,25 @@
-import "./Search.style.css";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { SearchContext } from "../../context";
+import "./Search.style.css";
 
 export function Search({}) {
-    
-    const search = useContext(SearchContext)
+  // Получение контекста поиска (объект с функцией управления поисковым состоянием)
+  const search = useContext(SearchContext);
+
   return (
     <div className="header__search">
+      {/* Поле ввода для поиска */}
       <input
         type="text"
         id="myInput"
         name="myInput"
-        placeholder="Поиск..."
-        onChange={(e)=>{
-            search.onChange(e.target.value)
-        }}  
+        placeholder="Поиск..." // Подсказка в поле ввода
+        onChange={(e) => {
+          // Обновление значения поиска при изменении текста
+          search.onChange(e.target.value);
+        }}
       ></input>
-      
     </div>
   );
 }
+
